@@ -102,7 +102,7 @@ class MyFrame(wx.Frame):
         yt.streams.get_audio_only(subtype='mp4').download(outPath, 'audio')
         print('>>> Combining audio and video...')
         os.system('ffmpeg -i '+ outPath + '/' + 'video.mp4 -i '+ outPath + '/' + 'audio.mp4 -c copy -map 0:v:0 -map 1:a:0 ' + outPath + '/' + fileName + '.mp4')
-        os.system('rm ' + outPath + '/' + 'video.mp4 && rm ' + outPath + '/' + 'audio.mp4')
+        os.system('del ' + outPath + '/' + 'video.mp4 && del ' + outPath + '/' + 'audio.mp4')
 
     def onDownload(self, e):
         try:
